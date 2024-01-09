@@ -1,4 +1,4 @@
-package net.hifor.demo;
+package net.hifor.demo.servlet;
 
 import org.apache.commons.text.StringEscapeUtils;
 

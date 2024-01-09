@@ -17,6 +17,7 @@ public class UrlController {
     /**
      * 查询参数
      * /url/parameter?param1=盘古开天&param2=女娲造人
+     * curl -X GET 'http://localhost:9090/url/parameter?param1=盘古开天&param2=女娲造人'
      * @param param1
      * @param param2
      * @return
@@ -34,6 +35,7 @@ public class UrlController {
     /**
      * 路径参数
      * /url/path/盘古开天/女娲造人
+     * curl -X GET 'http://localhost:9090/url/path/盘古开天/女娲造人'
      * @param param1
      * @param param2
      * @return
@@ -52,6 +54,8 @@ public class UrlController {
      * 数组参数
      * /url/array?params=盘古开天&params=女娲造人
      * /url/array?params=盘古开天,女娲造人
+     * curl -X GET 'http://localhost:9090/url/array?params=盘古开天&params=女娲造人'
+     * curl -X GET 'http://localhost:9090/url/array?params=盘古开天,女娲造人'
      * @param params
      * @return
      */

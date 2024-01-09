@@ -1,9 +1,7 @@
 package net.hifor.demo.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.util.HtmlUtils;
 
 import java.util.List;
 
@@ -16,11 +14,14 @@ import java.util.List;
 @RequestMapping("/header")
 public class HeaderController {
 
+    /**
+     *
+     * curl -X GET -H "User-Agent: MyCustomUserAgent" http://localhost:9090/header
+     * @param userAgent
+     * @return
+     */
     @GetMapping("/")
-    public String handleHeader(@RequestParam("params") List<String> params) {
-        for (int i = 0; i < params.size(); i++) {
-            System.out.println(params.get(i));
-        }
-        return "Received numbers: " + params;
+    public String getHeader(@RequestHeader("User-Agent") String userAgent) {
+        return "User-Agent header value: " + HtmlUtils.htmlEscape(userAgent);
     }
 }
