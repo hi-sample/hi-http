@@ -16,6 +16,7 @@ import java.io.IOException;
 public class BodyFormServlet extends HttpServlet {
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        request.setCharacterEncoding("UTF-8");
         String name = request.getParameter("name");
         Integer age = Integer.parseInt(request.getParameter("age"));
         User user = new User();
